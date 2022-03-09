@@ -1,8 +1,12 @@
-# site
+# access
 :3000 {
+  # site
 	root * /srv
 	file_server
 	encode zstd gzip
+
+  # links
+  redir /link/setup-debian-desktop.sh https://gist.githubusercontent.com/thetillhoff/38b109abe1782708c0059f7f99e1426f/raw/setup-debian-desktop.sh
 
 	# log config
 	log {
