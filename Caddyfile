@@ -1,18 +1,17 @@
 # site
 :3000 {
-  root * /srv
-  file_server
-  encode zstd gzip
+	root * /srv
+	file_server
+	encode zstd gzip
+
+	# log config
+	log {
+		output file /var/log/access.log
+		format json
+	}
 }
 
 # healthcheck
 :8080 {
-  respond "I'm healthy!"
-}
-
-# log config
-log {
-  #output stdout
-  output file /var/log/access.log
-  format json
+	respond "I'm healthy!"
 }
