@@ -1,0 +1,56 @@
+name: Publish image to container registry
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  prerequisites:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.2
+        with:
+          ref: main
+
+      - name: Check whether elements exist for the current release-tag in CHANGELOG.md
+        shell: bash
+        run: |
+          grep "${GITHUB_REF##*/}" CHANGELOG.md
+      - name: Delete version-tag when CHANGELOG.md doesn't contain information about it
+        if: failure()
+        shell: bash
+        run: |
+          git config --global user.name 'GithubActions'
+          git config --global user.email 'githubactions@users.noreply.github.com'
+          git push --delete origin ${{ env.RELEASE_TAG }}
+
+  build-and-push:
+    needs: prerequisites
+    name: Build tagged docker image and push to container registry
+    runs-on: ubuntu-20.04
+    env:
+      CONTAINER_REGISTRY: ghcr.io
+    steps:
+
+      - uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Build the tagged Docker image
+        shell: bash
+        run: |
+          docker build . -t $CONTAINER_REGISTRY/${{ github.repository_owner }}/${{ github.repository }}:${GITHUB_REF##*/}
+          docker tag $CONTAINER_REGISTRY/${{ github.repository_owner }}/${{ github.repository }}:${GITHUB_REF##*/} $CONTAINER_REGISTRY/${{ github.repository_owner }}/${{ github.repository }}:latest
+      - name: Log into container registry
+        shell: bash
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io --username ${{ github.repository_owner }} --password-stdin
+      - name: Push the tagged Docker image
+        shell: bash
+        run: |
+          docker push --all-tags $CONTAINER_REGISTRY/${{ github.repository_owner }}/${{ github.repository }}:${GITHUB_REF##*/}
+      - name: Log out of container registry
+        shell: bash
+        run: |
+          docker logout

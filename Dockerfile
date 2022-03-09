@@ -1,3 +1,6 @@
-FROM gitpod/workspace-base:latest
+FROM caddy:2.4.6
 
-RUN sudo sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -b /usr/local/bin
+WORKDIR /srv
+
+COPY output .
+COPY Caddyfile /etc/caddy/Caddyfile
