@@ -39,8 +39,8 @@ jobs:
       - name: Build the tagged Docker image
         shell: bash
         run: |
-          docker build . -t $CONTAINER_REGISTRY/${{ github.repository_owner }}/${{ github.repository }}:${GITHUB_REF##*/}
-          docker tag $CONTAINER_REGISTRY/${{ github.repository_owner }}/${{ github.repository }}:${GITHUB_REF##*/} $CONTAINER_REGISTRY/${{ github.repository_owner }}/${{ github.repository }}:latest
+          docker build . -t $CONTAINER_REGISTRY/${{ github.repository }}:${GITHUB_REF##*/}
+          docker tag $CONTAINER_REGISTRY/${{ github.repository }}:${GITHUB_REF##*/} $CONTAINER_REGISTRY/${{ github.repository }}:latest
       - name: Log into container registry
         shell: bash
         run: |
@@ -48,7 +48,7 @@ jobs:
       - name: Push the tagged Docker image
         shell: bash
         run: |
-          docker push --all-tags $CONTAINER_REGISTRY/${{ github.repository_owner }}/${{ github.repository }}
+          docker push --all-tags $CONTAINER_REGISTRY/${{ github.repository }}
       - name: Log out of container registry
         shell: bash
         run: |
