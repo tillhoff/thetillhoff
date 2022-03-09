@@ -10,6 +10,11 @@ I used my own two projects for building this site and developing it:
 - [temingo](https://github.com/tillhoff/temingo) as static site generator
 - [serve](https://github.com/tillhoff/serve) as local development webserver
 
+The image can be build and tested locally with
+```
+docker build . -t thetillhoff.de:dev && docker run --rm -it -p 3000:3000 -p 8080:8080 thetillhoff.de:dev
+```
+
 ## Further details for those interested
 
 Instead of using \<your favorite third-party framework, website-hoster\>, I wanted to create, optimize and host at least this single website on my own.
