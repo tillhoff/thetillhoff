@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.1 on 2022-03-12
+- simplified docker image - now using default caddyfile
+- removed link directive
+
 ## v0.1.0 on 2022-03-09
 - Added first shortened link
 - Reverted rearranged order of Dockerfile commands (caching can be dismissed for one single small file)
