@@ -12,7 +12,7 @@ I used my own two projects for building this site and developing it:
 
 The image can be build and tested locally with
 ```
-docker build . -t thetillhoff.de:dev && docker run --rm -it -p 3000:3000 -p 8080:8080 thetillhoff.de:dev
+docker build . -t thetillhoff.de:dev && docker run --rm -it -p 3000:80 thetillhoff.de:dev
 ```
 
 ## Further details for those interested
