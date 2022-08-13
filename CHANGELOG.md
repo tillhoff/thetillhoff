@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.2 on 2022-08-13
+- updated caddy version
+- added umami script
+
 ## v0.1.1 on 2022-03-12
 - simplified docker image - now using default caddyfile
 - removed link directive

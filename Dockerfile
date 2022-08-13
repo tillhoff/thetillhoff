@@ -1,3 +1,3 @@
-FROM caddy:2.4.6
+FROM caddy:2.5.2
 
 COPY output/ /usr/share/caddy/
