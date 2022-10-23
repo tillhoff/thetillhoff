@@ -1,12 +1,16 @@
 # CHANGELOG
 
+## v0.1.3 on 2022-10-03
+- Updated svelte version, including filestructure rework and migration to vite
+- Updated umami id after
+
 ## v0.1.2 on 2022-08-13
-- updated caddy version
-- added umami script
+- Updated caddy version
+- Added umami script
 
 ## v0.1.1 on 2022-03-12
-- simplified docker image - now using default caddyfile
-- removed link directive
+- Simplified docker image - now using default caddyfile
+- Removed link directive
 
 ## v0.1.0 on 2022-03-09
 - Added first shortened link
