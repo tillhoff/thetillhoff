@@ -9,21 +9,21 @@ jobs:
     name: Check prerequisites
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: main
 
       - name: Check whether elements exist for the current release-tag in CHANGELOG.md
         shell: bash
         run: |
-          grep "${GITHUB_REF##*/}" CHANGELOG.md
+          grep "${{ github.ref_name }}" CHANGELOG.md
       - name: Delete version-tag when CHANGELOG.md doesn't contain information about it
         if: failure()
         shell: bash
         run: |
           git config --global user.name 'GithubActions'
           git config --global user.email 'githubactions@users.noreply.github.com'
-          git push --delete origin ${{ env.RELEASE_TAG }}
+          git push --delete origin ${{ github.ref_name }}
 
   build-and-push:
     needs: prerequisites
@@ -32,15 +32,15 @@ jobs:
     env:
       CONTAINER_REGISTRY: ghcr.io
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: main
 
       - name: Build the tagged Docker image
         shell: bash
         run: |
-          docker build . -t $CONTAINER_REGISTRY/${{ github.repository }}:${GITHUB_REF##*/}
-          docker tag $CONTAINER_REGISTRY/${{ github.repository }}:${GITHUB_REF##*/} $CONTAINER_REGISTRY/${{ github.repository }}:latest
+          docker build . -t $CONTAINER_REGISTRY/${{ github.repository }}:${{ github.ref_name }}
+          docker tag $CONTAINER_REGISTRY/${{ github.repository }}:${{ github.ref_name }} $CONTAINER_REGISTRY/${{ github.repository }}:latest
       - name: Log into container registry
         shell: bash
         run: |
