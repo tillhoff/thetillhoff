@@ -1,8 +1,12 @@
 # CHANGELOG
 
+## v0.1.4 on 2022-10-23
+- Updated caddy version
+- Updated umami id
+
 ## v0.1.3 on 2022-10-03
 - Updated svelte version, including filestructure rework and migration to vite
-- Updated umami id after
+- Updated umami id
 
 ## v0.1.2 on 2022-08-13
 - Updated caddy version
