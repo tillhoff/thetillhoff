@@ -1,0 +1,43 @@
+:root {
+  /* color-scheme: light dark; already set in static html */
+  /* --main-color-h: 240;
+  --main-color-s: 0.8;
+  --main-color-l: 0.4; */
+  --main-color-h: 230;
+  --main-color-s: 50%;
+  --main-color-l: 40%;
+  --main-color-a: 1;
+  --main-color: hsla(var(--main-color-h), var(--main-color-s), var(--main-color-l), var(--main-color-a));
+  /* border-color: hsla(from var(--color) h s calc(l - 10%) a); */
+
+  --font-size: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --highlight-color: hsla(0, 0%, 100%, 0.1);
+  }
+
+  /* "re-colorize" in dark mode (less intense colors) TODO disabled because currently no images are on the page */
+  /* img:not([src*='.svg']) {
+    filter: grayscale(50%);
+  } */
+  img[src*='.svg'] {
+    filter: invert(100%);
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --highlight-color: hsla(0, 0%, 0%, 0.1);
+  }
+}
+
+{{ template "components/page.partial.css" }}
+
+{{ template "components/nav.partial.css" }}
+
+{{ template "components/div.partial.css" }}
+
+{{ template "components/footer.partial.css" }}
+
+{{ template "components/button.partial.css" }}

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.0.0 on 2023-04-02
+- Updated caddy version
+- Rebuild website from scratch with newest temingo version
+
 ## v0.1.4 on 2022-10-23
 - Updated caddy version
 - Updated umami id

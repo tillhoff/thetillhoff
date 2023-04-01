@@ -1,0 +1,139 @@
+/* general styling */
+button,
+a.button {
+  /* positioning, size */
+  /* 0.5 is kind of a random number, but applied on all button paddings */
+  padding: calc( 1rem * 0.5);
+  height: 1rem;
+  min-width: 1rem;
+
+  text-align: center;
+
+  font-size: inherit;
+
+  /* unify button styling */
+  /* display: inline; */
+  float: left;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  /* border */
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+
+  margin-left: 1rem;
+
+  /* color */
+  color: currentColor;
+}
+
+/* colors */
+button:hover,
+a.button:hover {
+  background-color: var(--highlight-color);
+}
+
+button:first-child,
+a.button:first-child {
+  margin-left: 0;
+}
+
+/* sizes */
+button,
+a.button {
+  padding: calc(1rem * 0.6);
+  height: 1rem;
+  min-width: 1rem;
+  font-size: 1rem;
+}
+
+button.large,
+a.button.large {
+  padding: calc(1rem * 1.2 * 0.6);
+  height: calc(1rem * 1.2);
+  min-width: calc(1rem * 1.2);
+  font-size: calc(1rem * 1.2);
+}
+button.big,
+a.button.big {
+  padding: calc(1rem * 1.4 * 0.6);
+  height: calc(1rem * 1.4);
+  min-width: calc(1rem * 1.4);
+  font-size: calc(1rem * 1.4);
+}
+button.huge,
+a.button.huge {
+  padding: calc(1rem * 1.6 * 0.6);
+  height: calc(1rem * 1.6);
+  min-width: calc(1rem * 1.6);
+  font-size: calc(1rem * 1.6);
+}
+
+/* inline */
+button.inline,
+a.button.inline {
+  float: none;
+}
+
+/* borderless */
+button.borderless,
+a.button.borderless {
+  border: none;
+}
+
+/* contains multiple actionable elements */
+.group > button,
+.group > a.button {
+  border-radius: 0px;
+  border-left: none;
+  margin-left: 0;
+}
+
+.group > button:first-child,
+.group > a.button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-left: solid;
+}
+
+.group > button:last-child,
+.group > a.button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+/* icon button */
+button.icon,
+a.button.icon {
+  height: calc(1rem * 1.1);
+  min-width: calc(1rem * 1.1);
+  /* padding: calc(1rem * 0.5 - (1rem * 1.2 - 1rem) / 2); */
+
+  /* center contents */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  aspect-ratio: 1/1;
+}
+button.large .icon,
+a.button.large .icon {
+  height: calc(1rem * 1.1 * 1.2);
+  min-width: calc(1rem * 1.1 * 1.2);
+  /* padding: calc(1rem * 1.2 * 0.5 - (1rem * 1.2 * 1.2 - 1rem * 1.2) / 2); */
+}
+button.big .icon,
+a.button.big .icon {
+  height: calc(1rem * 1.1 * 1.4);
+  min-width: calc(1rem * 1.1 * 1.4);
+  /* padding: calc(1rem * 1.4 * 0.5 - (1rem * 1.2 * 1.4 - 1rem * 1.4) / 2); */
+}
+button.huge .icon,
+a.button.huge .icon {
+  height: calc(1rem * 1.1 * 1.6);
+  min-width: calc(1rem * 1.1 * 1.6);
+  /* padding: calc(1rem * 1.6 * 0.5 - (1rem * 1.2 * 1.6 - 1rem * 1.6) / 2); */
+}
