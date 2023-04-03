@@ -64,7 +64,7 @@ p {
   margin-top: auto;
 }
 
-a:visited, a:active {
+a:link, a:visited, a:active {
   color: inherit;
 }
 
