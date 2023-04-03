@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.0.1 on 2023-04-04
+- Fix occasional bad link coloring
+- Move `color-scheme` from inline style/css to html metatag
+
 ## v1.0.0 on 2023-04-02
 - Updated caddy version
 - Rebuild website from scratch with newest temingo version
