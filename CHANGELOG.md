@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v1.0.2 on 2023-04-16
+- Added first blogpost in markdown
+- Added presentations, so the website https://p.thetillhoff.de can be deprecated soon
+- Added link to presentations to page navigation
+- Include `Caddyfile` in docker build
+- Added `.dockerignore` for faster build time
+- Updated included `temingo` version
+
 ## v1.0.1 on 2023-04-04
 - Fix occasional bad link coloring
 - Move `color-scheme` from inline style/css to html metatag
