@@ -1,0 +1,16 @@
+{{ template "partials/page.partial.html" . -}}
+
+{{- define "content" -}}
+
+<div class="fullWidth vertical textContainer">
+  <h1>Presentations</h1>
+  <ul>
+    {{ range $index, $element := .childMeta }}
+    <li>
+      <a href="/presentations/{{ $index }}/">{{ $element.date }} - {{ $element.title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+
+{{- end }}

@@ -1,26 +1,26 @@
-{{ template "components/page.partial.html" -}}
+{{ template "partials/page.partial.html" . -}}
 
 {{- define "content" -}}
 
-<div class="fullWidth vertical horizontalCenteredContent" style="margin-bottom: auto; margin-top: auto">
+<div class="fullWidth vertical horizontalCenteredContent centeredContent" style="margin-bottom: auto; margin-top: auto">
   <h1>Hey there! 👋 I'm Till.</h1>
   <p>Here are some links to learn more about me:</p>
 
-  <div class="centered">
+  <div class="verticalCentered">
     <a class="big icon button" href="https://github.com/thetillhoff">
-      {{ template "components/svgs/github.partial.svg" }}
+      {{ template "partials/svgs/github.partial.svg" . }}
       <svg viewBox="0 0 24 24" class="button icon" fill="currentcolor">
         <use xlink:href="#github"></use>
       </svg>
     </a>
     <a class="big icon button" href="https://linkedin.com/in/thetillhoff">
-      {{ template "components/svgs/linkedin.partial.svg" }}
+      {{ template "partials/svgs/linkedin.partial.svg" . }}
       <svg viewBox="0 0 24 24" class="button icon" fill="currentcolor">
         <use xlink:href="#linkedin"></use>
       </svg>
     </a>
     <a class="big icon button" href="https://xing.com/profile/Till_Hoffmann21">
-      {{ template "components/svgs/xing.partial.svg" }}
+      {{ template "partials/svgs/xing.partial.svg" . }}
       <svg viewBox="0 0 24 24" class="button icon" fill="currentcolor">
         <use xlink:href="#xing"></use>
       </svg>

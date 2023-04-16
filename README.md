@@ -69,3 +69,5 @@ To support both dark and light modes, the following adjustments were made:
   As a great side effect this prevents pages from flashing in the default color of the background (mostly white) before the CSS styling kicks in.
 - In addition, conditional CSS colorization variables are set via media queries for `prefers-color-scheme`. Those are used to darken on highlight (f.e. when hovering) in light mode and vice versa.
 
+## Development
+Use `./temingo -wsv` for continuous building and serving.

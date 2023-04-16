@@ -60,6 +60,10 @@ p {
   line-height: 1.5;
 }
 
+h1 {
+  margin-top: 4rem;
+}
+
 .centeredContent {
   margin-top: auto;
 }
@@ -85,6 +89,7 @@ nav a.logo {
   font-size: calc(2*var(--font-size));
   font-weight: bold;
   text-decoration: none;
+  padding-left: 0;
 }
 
 nav a:not(.logo) {
@@ -115,9 +120,13 @@ div {
   width: 100%;
 }
 
-.centered {
+.verticalCentered {
   margin-left: auto;
   margin-right: auto;
+}
+.horizontalCentered {
+  margin-top: auto;
+  margin-bottom: auto;
 }
   
 .vertical {
@@ -174,7 +183,7 @@ div.grid {
 }
 
 footer {
-  margin-top: 3rem;
+  margin-top: auto;
 
   text-align: center;
 }

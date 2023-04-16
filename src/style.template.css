@@ -32,12 +32,12 @@
   }
 }
 
-{{ template "components/page.partial.css" }}
+{{ template "partials/page.partial.css" . }}
 
-{{ template "components/nav.partial.css" }}
+{{ template "partials/nav.partial.css" . }}
 
-{{ template "components/div.partial.css" }}
+{{ template "partials/div.partial.css" . }}
 
-{{ template "components/footer.partial.css" }}
+{{ template "partials/footer.partial.css" . }}
 
-{{ template "components/button.partial.css" }}
+{{ template "partials/button.partial.css" . }}

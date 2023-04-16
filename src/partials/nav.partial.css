@@ -1,0 +1,31 @@
+nav {
+  width: 100%;
+  display: flex;
+
+  border-bottom: 4px solid;
+  border-color: var(--main-color);
+}
+
+nav a {
+  padding: 1rem;
+}
+
+nav a.logo {
+  /* color: #000; */
+  font-size: calc(2*var(--font-size));
+  font-weight: bold;
+  text-decoration: none;
+  padding-left: 0;
+}
+
+nav a:not(.logo) {
+  margin-right: 2rem;
+}
+
+/* colors */
+nav a:not(.logo):hover {
+  background-color: var(--highlight-color);
+  /* background-color: rgba(var(--highlight-rgb),0.5); */
+  /* backdrop-filter: brightness(calc(1+0.5)); */
+  /* backdrop-filter: brightness(calc(var(--brightness) + 0.5)); */
+}
