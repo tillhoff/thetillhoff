@@ -1,0 +1,7 @@
+# Ignore everything, then whitelist explicitely
+**
+
+# Whitelist Caddyfile
+!/Caddyfile
+# Whitelist rendered website
+!/output/**
