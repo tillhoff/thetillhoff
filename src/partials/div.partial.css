@@ -9,6 +9,9 @@ div {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+body > div.textContainer > h1 {
+  margin-top: 4rem;
+}
 
 .fullWidth {
   width: 100%;
