@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v1.0.5 on 2023-04-30
+- Fix hidden portrait mode navigation
+
 ## v1.0.4 on 2023-04-30
 - Move custom margin-top of h1 from global to body > div.textcontainer > h1 to prevent impact on centered content
 - Increase space between <li> elements for better mobile accessibility
