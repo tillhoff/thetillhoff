@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v1.0.6 on 2023-04-30
+- Fix hidden portrait mode navigation on ios
+
 ## v1.0.5 on 2023-04-30
 - Fix hidden portrait mode navigation
 
