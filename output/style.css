@@ -33,7 +33,7 @@
 }
 
 body {
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: normal;
   align-items: center;
@@ -46,7 +46,6 @@ body {
 * {
   font-family: "Open Sans", sans-serif;
   box-sizing: content-box; /* remove strange behaviour of some native elements - looking at you _button_! */
-  transition: all 0.2s ease-in-out;
 
   /* antialiasing */
   /* -webkit-font-smoothing: antialiased;
@@ -70,6 +69,23 @@ h1 {
 
 a:link, a:visited, a:active {
   color: inherit;
+}
+
+
+/* responsiveness */
+.portrait {
+  display: inherit;
+}
+.landscape {
+  display: none;
+}
+@media only screen and (orientation: landscape) {
+  .portrait {
+    display: none;
+  }
+  .landscape {
+    display: inherit;
+  }
 }
 
 nav {
@@ -102,6 +118,34 @@ nav a:not(.logo):hover {
   /* background-color: rgba(var(--highlight-rgb),0.5); */
   /* backdrop-filter: brightness(calc(1+0.5)); */
   /* backdrop-filter: brightness(calc(var(--brightness) + 0.5)); */
+}
+
+/* portraitNav */
+#portraitNav {
+  padding: 1rem 0;
+}
+
+#portraitNav-label {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  width: 3rem;
+}
+
+#portraitNav-toggle:checked ~ #portraitNav {
+  display: inherit;
+}
+#portraitNav-toggle:checked ~ div {
+  /* there is only one div directly below the body tag and it represents the pages contents */
+  display: none;
+}
+
+
+#portraitNav > a {
+  margin: 1rem;
 }
 
 div {
@@ -184,6 +228,7 @@ div.grid {
 
 footer {
   margin-top: auto;
+  padding-top: 1rem;
 
   text-align: center;
 }
@@ -217,6 +262,7 @@ a.button {
 
   /* color */
   color: currentColor;
+  transition: background-color 0.2s ease-in-out;
 }
 
 /* colors */

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v1.0.3 on 2023-04-30
+- Add portrait mode navigation (with hamburger menu)
+- Fix content centering of About page
+- Move global transition setting to buttons only (to prevent page flickering on load)
+- Change space above footer from <br> to padding
+- Change order of tags within <head> to (minimally) improve page rendering speed
+
 ## v1.0.2 on 2023-04-16
 - Added first blogpost in markdown
 - Added presentations, so the website https://p.thetillhoff.de can be deprecated soon
