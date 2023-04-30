@@ -219,7 +219,7 @@ div.form .button {
 /* hidden */
 
 .hidden {
-  display: none !important;
+  display: none;
 }
 
 /* grid */
