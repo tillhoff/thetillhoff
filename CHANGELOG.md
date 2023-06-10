@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v1.0.8
+- Fix security headers
+
 ## v1.0.7
 - Improve accessibility
   - Add aria-label for discernible link text on buttons
