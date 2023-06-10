@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.0.7
+- Improve accessibility
+  - Add aria-label for discernible link text on buttons
+- Add more headers to make website safer
+- Update umami.js reference
+
 ## v1.0.6 on 2023-04-30
 - Fix hidden portrait mode navigation on ios
 
