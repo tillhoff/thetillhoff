@@ -6,6 +6,10 @@ nav {
   border-color: var(--main-color);
 }
 
+nav > div {
+  padding-left: 1rem; padding-right: 1rem; min-height: 5rem;
+}
+
 nav a {
   padding: 1rem;
 }

@@ -1,7 +1,13 @@
 # CHANGELOG
 
+
+## v1.0.9
+- Fix security header for analytics script
+- Move svgs to inline to reduce file contents (only used once per page anyway)
+
 ## v1.0.8
 - Fix security headers
+- Update ubuntu version of Github Action pipeline (doesn't impact application)
 
 ## v1.0.7
 - Improve accessibility
