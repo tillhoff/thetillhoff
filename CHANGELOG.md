@@ -1,5 +1,7 @@
 # CHANGELOG
 
+## v1.0.10
+- Add meta-description tag
 
 ## v1.0.9
 - Fix security header for analytics script
