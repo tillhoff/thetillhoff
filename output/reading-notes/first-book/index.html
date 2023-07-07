@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <!-- place stylesheet reference before color-scheme to prevent flickering -->
+    <meta name="color-scheme" content="dark light">
+    <!-- automatically takes care of all the dark and light mode default features :) and is faster than setting it via css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      thetillhoff.de
+    </title>
+    <meta name="description" content="Hey there! 👋 I'm Till. This is my website.">
+  </head>
+  <body>
+    <nav class="fullWidth verticalCenteredContent horizontalCenteredContent">
+      <div class="fullWidth textContainer horizontalCenteredContent">
+        <a href="/" class="logo">
+          thetillhoff
+        </a>
+        <div class="rtl landscape">
+          <a href="/">
+            About
+          </a>
+          <a href="/docs/">
+            Docs
+          </a>
+          <a href="/presentations/">
+            Presentations
+          </a>
+          <a href="/reading-notes/">
+            Reading Notes
+          </a>
+        </div>
+      </div>
+      <!-- instead of having the colored line as bottom-border of nav, insert it here as <hr> -->
+    </nav>
+    <label id="portraitNav-label" for="portraitNav-toggle" class="portrait">
+      <svg role="img" viewBox="0 0 400 250" class="button icon" stroke="currentcolor">
+        <g id="three-stripes">
+          <line stroke-width="50" y2="25" x2="400" y1="25" x1="0"/>
+          <line stroke-width="50" y2="125" x2="400" y1="125" x1="0"/>
+          <line stroke-width="50" y2="225" x2="400" y1="225" x1="0"/>
+        </g>
+      </svg>
+    </label>
+    <input type="checkbox" id="portraitNav-toggle" class="hidden" autocomplete="off">
+    <div id="portraitNav" class="portrait hidden vertical fullWidth horizontalCenteredContent">
+      <a href="/">
+        About
+      </a>
+      <a href="/docs/">
+        Docs
+      </a>
+      <a href="/presentations/">
+        Presentations
+      </a>
+      <a href="/reading-notes/">
+        Reading Notes
+      </a>
+    </div>
+    <div class="fullWidth vertical textContainer">
+      <p>
+        &gt;&nbsp;
+        <a href="/reading-notes">
+          /reading-notes
+        </a>
+        &nbsp;
+      </p>
+    </div>
+    <div class="fullWidth vertical textContainer">
+      <h1 id="first-book">
+        First book
+      </h1>
+      <h2 id="formatting-test-via-first-markdown-file">
+        Formatting test via first markdown file
+      </h2>
+      <p>
+        Because this content is coming from a
+        <em>
+          markdown
+        </em>
+        file that's
+        <strong>
+          converted to html
+        </strong>
+        in the background, I want to also use this post to verify all the formatting works properly.
+      </p>
+    </div>
+    <footer>
+      Made with ❤️ by
+      <a href="https://github.com/thetillhoff">
+        thetillhoff
+      </a>
+    </footer>
+    <script async defer src="https://analytics.thetillhoff.de/script.js" data-website-id="196b7c7d-a4ba-4119-989e-8a7bf6edc3bf"></script>
+  </body>
+</html>

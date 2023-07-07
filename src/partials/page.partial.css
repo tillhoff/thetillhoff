@@ -33,6 +33,10 @@ p {
   margin-top: auto;
 }
 
+a {
+  display: inline-block; /* removes weird underline on non-existant space behind link */
+}
+
 a:link, a:visited, a:active {
   color: inherit;
 }

@@ -4,6 +4,10 @@ This repository contains the current status of the website https://thetillhoff.d
 
 > The grand idea was to make the site as fast as possible. Go on, check it out, I'll wait.
 
+improve presentation style (formatting of notes)
+presentation of my work
+small game?
+
 ## How to get started
 - `./temingo -wsv`
 <!--
@@ -24,18 +28,12 @@ Instead of using \<your favorite third-party framework, website-hoster\>, I want
 Some details/goals of the setup are:
 - Speed, simplicity and efficiency are the primary goals.
 - The website runs on a [caddy](https://caddyserver.com/) container.
-- Supports dark and light mode (automatically picked up from browser settings). Without flashing...
+
 - Since it's cumbersome to repeat html snippets, I'm using [temingo](https://github.com/thetillhoff/temingo) as a static website generator.
 - No usage of google-fonts or any other third-party hosting for anything.
 - No javascript (except a reference to add my own analytics)
-- Provide both IPv4 and IPv6 access with valid certificates.
 
-While I'm trying to make this website as fast as possible ...
-- ... the used CSS is *not* less enough to just embed it in the HTML instead of using a dedicated CSS file. More details on that topic can be found on https://mathiasbynens.be/notes/inline-vs-separate-file. TL;DR: For CSS smaller than some 700 bytes, it actually *reduces* bandwidth and loading speed to have CSS and HTML in the same file, because of reduced packet overhead and the necessity of the additional request for the CSS file. (At the time of writing, the CSS alone has a size ~6kB minified.)
-- ... I decided to *not* use a CDN. While they add convenience and performance to larger sites, they don't like unfrequently visited sites: For sites not in their cache (anymore, as they aren't visited frequently enough) they add latency because they fetch the site themselves before providing it to the actual requester. At the same time not using CDNs reduces scaling capabilities, increases DDoS chances, and introduces additional latency for website-calls from (at least) other continents.
-- ... the goal was to get as much direct html with as less javascript as possible. That means that javascript frameworks like vuejs or svelte don't fit here.
-      The static site generator hugo would fit, but has a gazillion of unnecessary features and doesn't support automatic code indentation in the generated files.
-      In addition, it provides many ways of doing thing, which I do believe is not a good design.
+
 
 <!--
 # Considerations
@@ -63,11 +61,54 @@ While I'm trying to make this website as fast as possible ...
 - don't make things flexible (aka variables) if there is no need. F.e. making the name of the templates or output folder flexible via variables.
 -->
 
-## Dark and light modes
+
+## Features
+
+### Speed
+The following points were considered during developing this webpage:
+- [x] The used CSS is *not* less enough to just embed it in the HTML instead of using a dedicated CSS file. More details on that topic can be found on https://mathiasbynens.be/notes/inline-vs-separate-file. TL;DR: For CSS smaller than some 700 bytes, it actually *reduces* bandwidth and loading speed to have CSS and HTML in the same file, because of reduced packet overhead and the necessity of the additional request for the CSS file. (At the time of writing, the CSS alone has a size ~6kB minified.)
+- [x] A CDN does *not* make sense for this website. While they add convenience and performance to larger sites, they don't like unfrequently visited sites: For sites not in their cache (anymore, as they aren't visited frequently enough) they even add latency, as they fetch the site themselves before providing it to the actual requester. At the same time not using CDNs reduces scaling capabilities, increases DDoS chances, and introduces additional latency for website-calls from (at least) other continents. I dediced to take this risk.
+- [x] The goal was to get as much direct html with as less javascript as possible. That means that javascript frameworks like vuejs or svelte don't fit here.
+      A static site generator like hugo would fit, but has a gazillion of unnecessary features and doesn't support automatic code indentation in the generated files (which triggers my OCD).
+      In addition, it provides many ways of doing things, which I do believe is not a good design.
+      Therefore, I started developing my own static [site generator](https://github.com/thetillhoff/temingo), and use it for this website.
+- [x] Compression is enabled on server side.
+
+### Dark and light modes
 To support both dark and light modes, the following adjustments were made:
-- `color-scheme: light dark;` makes the browser automatically adjust the website default colors to the system preference. If you're on dark mode, the default background is dark, if your default is light mode, the background will be light by default.
-  As a great side effect this prevents pages from flashing in the default color of the background (mostly white) before the CSS styling kicks in.
-- In addition, conditional CSS colorization variables are set via media queries for `prefers-color-scheme`. Those are used to darken on highlight (f.e. when hovering) in light mode and vice versa.
+- [x] `color-scheme: light dark;` makes the browser automatically adjust the website default colors according to the browser preferences (without flashing!). If you're on dark mode, the default background is dark, if your default is light mode, the background will be light by default.
+  As a great side effect this prevents pages from flashing in the default color of the background (normally white) before the dark-mode CSS styling kicks in.
+- [x] In addition, conditional CSS colorization variables are set via media queries for `prefers-color-scheme`. Those are used to darken on highlight (f.e. when hovering) in light mode and vice versa.
+
+### IPv4 compatible and IPv6 ready
+- [ ] This webpage is hosted on a server that provides a IPv4 and IPv6 address, which are referenced in an A and an AAAA DNS record respectively.
+
+### Security by design
+- [x] secure TLS
+  - [x] HTTP requests are redirected to HTTPS.
+  - [x] HTTPS has automatically renewed certificates (letsencrypt).
+  - [x] Only TLS1.2 or higher are allowed.
+  - [x] Insecure ciphers are disabled.
+- [x] HTTP headers are configured for maximum security:
+  - [x] HSTS is enabled.
+  - [x] XSS is prevented.
+  - [x] CSPs are set.
+- More information can be found in the [README.md of webscan](https://github.com/thetillhoff/webscan), which I wrote specifically to scan websites for infrastructure and security issues and best-practices.
+
+### Accessibility
+- [x] Discernible text for links - if there is only an icon in there, add an aria-label
+- [ ] https://developers.google.com/search/docs/appearance/title-link?visit_id=638185384773364906-586104254&rd=1#1
+
+### Analytics
+I was thinking about using server-side analytics, instead of any client-side javascript code. But browsers often cache a whole page, so the server wouldn't get a request for every page load of a user. Javscript still runs on every page load, even if cached. Therefore a lightweight javascript is used, that only transmits data to a selfhosted instance for that analytics tool.
 
 ## Development
 Use `./temingo -wsv` for continuous building and serving.
+
+
+FEATURE IDEAS
+- If there is neither a meta.yaml, nor a content.md in a folder, but only subfolders, then iterate over those subfolders (recursively). If a meta.yaml/content.md is found, check parent-folders until an index.metatemplate.html is found (again, recursive).
+- If there is a content.md, but no meta.yaml, use the folder name as title (lowercase, "safe").
+- ? When there's a metatemplate, subfolders don't contain a meta.yaml, but there are subsubfolders, then use that metatemplate for them as well ("metatemplate recursion", see above as well).
+- Add a variable to the templates "local path" so it's possible to use absolute paths, but users don't have to specify them in the source
+- Breadcrumbs for docs etc

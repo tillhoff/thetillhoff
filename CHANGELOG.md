@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v1.0.11
+- Removed `/blog` section (contained just one demo post anyway, and will use `/docs` instead)
+- Add `/docs` section with some recipes
+- Add `/reading-notes` section with first demo post
+- Add breadcrumbs to all pages where they make sense
+- Updated readme to reflect current state of website
+
 ## v1.0.10
 - Add meta-description tag
 

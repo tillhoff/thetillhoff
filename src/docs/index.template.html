@@ -1,0 +1,22 @@
+{{ template "partials/page.partial.html" . -}}
+
+{{- define "content" -}}
+
+<div class="fullWidth vertical textContainer">
+
+  <h1>Docs</h1>
+  <p>
+    As I'm a fan of reducing duplicate work and of open source, I'm using this corner of my website to publish docs to various topics for myself and the world.
+
+    Some pages might be in German for my own convenience, like recipes.
+  </p>
+  <ul>
+    {{ range $index, $element := .childMeta }}
+    <li>
+      <a href="/docs/{{ $index }}/">{{ $element.title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+
+{{- end }}
