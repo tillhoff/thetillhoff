@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## next
+- Split header and footer sections into dedicated partials with no effect to rendered output
+
 ## v1.0.11
 - Removed `/blog` section (contained just one demo post anyway, and will use `/docs` instead)
 - Add `/docs` section with some recipes
