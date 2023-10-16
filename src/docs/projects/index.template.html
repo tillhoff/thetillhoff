@@ -1,0 +1,27 @@
+{{ template "partials/page.partial.html" . -}}
+
+{{- define "head" -}}
+<title>thetillhoff.de</title>
+<meta name="description" content="Hey there! 👋 I'm Till. This is my website.">
+{{- end }}
+
+{{- define "content" -}}
+
+<div class="fullWidth vertical textContainer">
+
+  <h1>Projects</h1>
+  <p>
+    Some of my thoughts make more sense than others, and some even have a real world use case.
+
+    I'd like to approach them in the following order: dotfiles, scraper, metal-bear (/planetshape, still can't decide)
+  </p>
+  <ul>
+    {{ range $index, $element := .childMeta }}
+    <li>
+      <a href="/projects/{{ $index }}/">{{ $element.title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+
+{{- end }}

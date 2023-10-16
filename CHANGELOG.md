@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## next
+- Add values and explanations
+- Add freelancing notes
+- Add project ideas
+
 ## v1.0.12
 - Add recipes
 - Update caddy image
@@ -75,7 +80,7 @@
 - Added umami script
 
 ## v0.1.1 on 2022-03-12
-- Simplified docker image - now using default caddyfile
+- Simplified docker image - now using default Caddyfile
 - Removed link directive
 
 ## v0.1.0 on 2022-03-09
