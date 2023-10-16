@@ -1,6 +1,8 @@
 # CHANGELOG
 
-## next
+## v1.0.12
+- Add recipes
+- Update caddy image
 - Split header and footer sections into dedicated partials with no effect to rendered output
 
 ## v1.0.11
