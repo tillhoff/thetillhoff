@@ -1,5 +1,8 @@
 # CHANGELOG
 
+# v1.0.13
+- Rename `/presentations` to `/slides`
+
 ## v1.0.12
 - Add recipes
 - Update caddy image
