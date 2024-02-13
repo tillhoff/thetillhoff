@@ -112,3 +112,100 @@ FEATURE IDEAS
 - ? When there's a metatemplate, subfolders don't contain a meta.yaml, but there are subsubfolders, then use that metatemplate for them as well ("metatemplate recursion", see above as well).
 - Add a variable to the templates "local path" so it's possible to use absolute paths, but users don't have to specify them in the source
 - Breadcrumbs for docs etc
+---
+
+Idea for Infrastructure is Cool
+
+**Introduction:**
+- Introduce yourself and your passion for IT infrastructure and modern technologies.
+- Briefly set the stage for the story: "Today, I'm going to take you on a journey of building an awesome website and the adventure of running it at scale!"
+
+**Act 1: The Birth of the Cool Website**
+- Start with an exciting idea for a website and how it came to be.
+- Showcase the development process, explaining the tech stack used (e.g., HTML, CSS, JavaScript, etc.).
+- Demo the simple website on your local machine and share the excitement of the initial creation.
+
+**Act 2: The Quest for Scalability**
+- As more users discover the website, it gains popularity, and you encounter scaling challenges.
+- Explain the importance of scalability and how it's vital for growing businesses.
+- Introduce the concept of scaling horizontally and vertically to handle increased traffic.
+- Demo the website's performance on a single server and simulate traffic to reveal bottlenecks.
+
+**Act 3: Enter Containers**
+- As demand continues to rise, you realize traditional server setups won't cut it anymore.
+- Introduce the concept of containers and how they bring flexibility and consistency to deployments.
+- Showcase containerization using Docker and its benefits in isolating applications.
+- Containerize the website and demonstrate how easy it is to package and ship it across environments.
+
+**Act 4: The Journey to the Cloud**
+- With containerized applications, it's time to explore the world of cloud infrastructure.
+- Discuss the advantages of cloud platforms like AWS, GCP, or Azure.
+- Deploy the containerized website on a cloud platform using Terraform, highlighting Infrastructure as Code.
+
+**Act 5: Handling Success with Load Balancing**
+- As the website gains even more popularity, you face new challenges to ensure high availability.
+- Introduce load balancing and its role in distributing traffic across multiple servers.
+- Implement load balancing for the website using Kubernetes, ensuring seamless user experience.
+
+**Act 6: A Symphony of Automation**
+- With infrastructure growing complex, manual management becomes tedious.
+- Showcase the power of automation with tools like Ansible to streamline deployments and updates.
+- Automate the scaling process to handle traffic spikes effortlessly.
+
+**Act 7: Keeping a Watchful Eye - Monitoring and Optimization**
+- With a website running at scale, monitoring becomes essential to ensure performance and reliability.
+- Introduce monitoring tools like Grafana and Prometheus for real-time insights.
+- Showcase how to monitor the website's performance and optimize resources for efficiency.
+
+**Act 8: The Impenetrable Fortress - Security and Compliance**
+- Highlight the critical aspect of security and protecting the website and its users.
+- Discuss container security measures and best practices for securing the infrastructure.
+- Implement basic security measures to fortify the website and infrastructure.
+
+**Conclusion:**
+- Recap the incredible journey of building the awesome website and scaling it to success.
+- Emphasize the importance of modern infrastructure in enabling businesses to thrive.
+- Encourage the audience to explore the exciting world of IT infrastructure and embrace new technologies.
+
+**Closing:**
+- Thank the audience for joining you on this adventurous journey.
+- Offer a Q&A session for any questions and discussions.
+- Provide additional resources for further learning and experimentation.
+
+Remember to bring energy and enthusiasm to the presentation, as this captivating story will take your audience through a thrilling experience of building and running a cool website with cutting-edge infrastructure concepts! Good luck, and have fun with your presentation!
+
+---
+
+focus on these acts:
+
+The Quest for Scalability (Act 2): This act is essential as it introduces the main challenge faced by many businesses as they grow. Explain the importance of scalability and how it directly impacts the website's performance and user experience. Use visual aids and interactive examples to showcase the difference between a non-scalable website and a scalable one under increasing traffic.
+
+Enter Containers (Act 3): Containers are a revolutionary technology that has transformed the way applications are deployed and managed. Focus on this act to emphasize the benefits of containerization, such as consistency, portability, and resource isolation. Use a live demo to showcase how easy it is to package and deploy the website in containers.
+
+Handling Success with Load Balancing (Act 5): Load balancing is a crucial aspect of ensuring high availability and optimal performance, especially when dealing with increased traffic. Put a strong focus on this act to demonstrate how load balancing works, the different algorithms used, and how it improves the website's reliability.
+
+A Symphony of Automation (Act 6): Automation is a key enabler of modern IT infrastructure management. Give significant attention to this act to showcase how automation streamlines the deployment and management process. Use examples to demonstrate how automation saves time, reduces errors, and enhances overall efficiency.
+
+---
+
+pitfalls:
+- overload with technical jargon
+- lack of context
+- too much detail
+- skipping the basics
+- lack of engangement
+- rushing
+- neglecting visuals
+- lack of clear takeaways
+- running out of time
+
+roughly 1h, if each slide takes 5-8min, but leave buffer, so 1h15min or so
+
+depending on audience, adjust:
+- tech terms
+- level of detail
+- visuals
+- pace
+- audience interaction
+- focus on story vs on topics
+- impact on business vs tech advantages

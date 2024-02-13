@@ -12,73 +12,97 @@
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/monokai.min.css">
     <style>
+      .reveal .slides section,
+      .reveal slides section > section {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: auto;
+      width: auto;
+      padding: 3rem;
+      }
       .reveal h1 {
       font-size: 2em;
       }
-      img {
+      .reveal img {
       object-fit: contain;
+      max-height: 70vh;
+      }
+      .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       }
       p.notes {
+      position: absolute;
+      bottom: 0;
       font-size: 0.3em;
+      }
+
+      code {
+      font-family: monospace;
+      background-color: lightgray;
+      display: inline-block;
       }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-transition="none">
-          <h1>
+        <section>
+          <h1 style="margin-top: 30vh;">
             Till @ xchange
           </h1>
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The company
           </h1>
-          <img src="images/xchange-rooftop-elphie.jpg" height="500">
+          <img src="images/xchange-rooftop-elphie.jpg">
           <br/>
           <p class="notes">
             startup, location, diversity, business model
           </p>
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The product
           </h1>
-          <img src="images/xchange-product-screenshot-trading.jpg" height="500" width="auto">
+          <img src="images/xchange-product-screenshot-trading.jpg">
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The product
           </h1>
-          <img src="images/xchange-product-screenshot-leasing.jpg" height="500" width="auto">
+          <img src="images/xchange-product-screenshot-leasing.jpg">
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The product
           </h1>
-          <img src="images/xchange-product-screenshot-new-nav.jpg" height="500">
+          <img src="images/xchange-product-screenshot-new-nav.jpg">
           <br/>
           <p class="notes">
             leasing, trading, tracking, types, insights, insurance, ...
           </p>
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The assignment
           </h1>
-          <img src="images/green-lighter.jpg" height="500" width="300">
-          <img src="images/green-container.jpg" height="500" width="400">
+          <img src="images/green-lighter.jpg">
+          <img src="images/green-container.jpg">
           <br/>
           <p class="notes">
             greenlighter, impact, startup, infra/devops
           </p>
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The assignment
           </h1>
-          <img src="images/xchange-busy-calendar.jpg" height="300">
+          <img src="images/xchange-busy-calendar.jpg" style="max-height:60vh;">
           <br/>
           Did I "kill a plant" or did the plant
           <br/>
@@ -90,7 +114,7 @@
             fast, double onboarding, responsibility
           </p>
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The team - start
           </h1>
@@ -117,7 +141,7 @@
             communication
           </p>
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The team - later
           </h1>
@@ -155,63 +179,65 @@
             Netlight, hiring
           </p>
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The problems
           </h1>
-          <img src="images/xchange-this-is-fine.jpg" height="500">
+          <img src="images/xchange-this-is-fine.jpg">
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The problems
           </h1>
-          <img src="images/technical-debt.jpg" height="400">
+          <img src="images/technical-debt.jpg">
           <br/>
           <p class="notes">
             siloing, communication
           </p>
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The problems
           </h1>
-          <img src="images/xchange-ddos.jpg" height="250">
+          <img src="images/xchange-ddos.jpg" style="height:30vh;">
           <br/>
-          <img src="images/evergrande-stuck-in-suez-canal.jpg" height="250">
+          <img src="images/evergrande-stuck-in-suez-canal.jpg" style="height:30vh;">
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The problems
           </h1>
-          <img src="images/hoping-nobody-hacks-you.jpg" height="500">
+          <img src="images/hoping-nobody-hacks-you.jpg">
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The accomplishments
           </h1>
-          <ul>
-            <li>
-              Kubernetes migration of >20 svcs & >15 envs
-            </li>
-            <li>
-              Observability & Incident Management
-            </li>
-            <li>
-              Shift-left enablement
-            </li>
-            <li>
-              Team infra
-            </li>
-            <li>
-              Reputation (team & NL)
-            </li>
-          </ul>
-          <img src="images/xchange-tickets-done.jpg" height="150">
+          <div class="container">
+            <ul>
+              <li>
+                Kubernetes migration of >20 svcs & >15 envs
+              </li>
+              <li>
+                Observability & Incident Management
+              </li>
+              <li>
+                Shift-left enablement
+              </li>
+              <li>
+                Team infra
+              </li>
+              <li>
+                Reputation (team & NL)
+              </li>
+            </ul>
+            <img src="images/xchange-tickets-done.jpg" height="350">
+          </div>
           <p class="notes">
             grain of salt
           </p>
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The other Netlighters
           </h1>
@@ -227,12 +253,12 @@
             </li>
           </ul>
         </section>
-        <section data-transition="none">
+        <section>
           <h1>
             The end
           </h1>
-          <img src="images/container-prices-yearly-trend.jpg" height="300">
-          <img src="images/container-rates-2019-2022.jpg" height="300">
+          <img src="images/container-prices-yearly-trend.jpg" style="height:50vh;">
+          <img src="images/container-rates-2019-2022.jpg" style="height:50vh;">
         </section>
       </div>
     </div>
@@ -244,6 +270,9 @@
       Reveal.initialize({
       hash: true,
       slideNumber: true,
+      center: false,
+      disableLayout: true,
+      transition: 'none',
       plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
       });
     </script>
