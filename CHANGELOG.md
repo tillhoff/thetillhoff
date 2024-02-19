@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# v1.0.14
+- Fix some paths regarding `/slides` from last version
+- Add WIP slides for 'Infrastructure is cool'
+
 # v1.0.13
 - Rename `/presentations` to `/slides`
 
