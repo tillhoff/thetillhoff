@@ -8,11 +8,11 @@
 {{- define "content" -}}
 
 <div class="fullWidth vertical textContainer">
-  <h1>Presentations</h1>
+  <h1>Slides</h1>
   <ul>
     {{ range $index, $element := .childMeta }}
     <li>
-      <a href="/presentations/{{ $index }}/">{{ $element.date }} - {{ $element.title }}</a>
+      <a href="/slides/{{ $index }}/">{{ $element.date }} - {{ $element.title }}</a>
     </li>
     {{ end }}
   </ul>
