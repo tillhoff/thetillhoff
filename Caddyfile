@@ -3,27 +3,30 @@
   root * /usr/share/caddy
   file_server
   encode zstd gzip
-
+  
   header {
-    # enable HSTS
+    # Configure caching
+    header Cache-Control max-age=3600; # 1h
+
+    # Enable HSTS
     Strict-Transport-Security max-age=31536000;
 
-    # disable FLoC tracking
+    # Disable FLoC tracking
     Permissions-Policy interest-cohort=()
 
     # Enable cross-site filter (XSS)
     # and tell browser to block detected attacks
-    X-Frame-Options "Deny"
+    X-Frame-Options DENY
 
-    # disable clients from sniffing the media type
+    # Disable clients from sniffing the media type
     X-Content-Type-Options nosniff
 
-    # set csp
+    # Set CSP
     Content-Security-Policy "default-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' https://analytics.thetillhoff.de; img-src 'self'; connect-src https://analytics.thetillhoff.de;"
   }
 }
 
-# healtchcheck
+# Healtchcheck
 :8080 {
   respond "I'm healthy!"
 }
