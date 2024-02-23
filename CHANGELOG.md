@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# v1.0.16
+- Fix more links
+- Add some content
+
 # v1.0.15
 - Fix more paths
 - Add caching to caddy
