@@ -1,0 +1,33 @@
+name: Publish image to container registry
+on:
+  push:
+
+jobs:
+  prerequisites:
+    name: Check prerequisites
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+  build-and-push:
+    needs: prerequisites
+    name: Build tagged docker image and push to container registry
+    runs-on: ubuntu-22.04
+    permissions:
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the tagged Docker image
+        shell: bash
+        run: |
+          docker build . -t "ghcr.io/${{ github.repository }}:${{ github.ref_name }}"
+          docker tag "ghcr.io/${{ github.repository }}:${{ github.ref_name }}" "ghcr.io/${{ github.repository }}:latest"
+      - name: Log into container registry
+        shell: bash
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io --username "${{ github.repository_owner }}" --password-stdin
+      - name: Push the tagged Docker image
+        shell: bash
+        run: |
+          docker push --all-tags ghcr.io/${{ github.repository }}
