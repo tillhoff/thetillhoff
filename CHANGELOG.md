@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# v1.0.17
+- Remove docs/recipes section as it was unused
+- Upgrade reveal.js to v5
+
 # v1.0.16
 - Fix more links
 - Add some content
