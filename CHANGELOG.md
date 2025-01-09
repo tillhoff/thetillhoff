@@ -1,5 +1,10 @@
 # CHANGELOG
 
+# v1.0.18
+- Update dependencies
+- Remove unused prerequisites from pipeline
+- Change commit pipeline to use commit-hash instead of branch name
+
 # v1.0.17
 - Remove docs/recipes section as it was unused
 - Upgrade reveal.js to v5
